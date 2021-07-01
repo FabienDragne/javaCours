@@ -95,5 +95,60 @@ public class MesMaths {
         return false;
     }
 
+    public static int multiplication5for(int x)
+    {
+        int result = 0;
+        for(int i = 0; i < x; i++) {
+            result += 5;
+        }
+        return result;
+    }
+
+    public static int multiplication5while(int x)
+    {
+        int result = 0;
+        while(result != x * 5) {
+            result += 5;
+        }
+        return result;
+    }
+
+    public static int multiplication5do(int x)
+    {
+        int result = 0;
+        do{
+            result += 5;
+        } while (result != x * 5);
+        return result;
+    }
+
+    public static void run()throws InterruptedException
+    {
+        char row = '|';
+        int rowLenght = 0;
+
+
+        do {
+
+            if(rowLenght <= 20)
+
+                {
+                    System.out.println();
+                    Thread.sleep(55);
+                    for (int i = rowLenght; i < 20; i++) {
+                        System.out.print(row);
+                    }
+                }
+            else if (rowLenght >= 20) {
+                    System.out.println();
+                    Thread.sleep(55);
+                    for (int i = rowLenght; i > 0; i--) {
+                        System.out.print(row);
+                    }
+            }
+
+        } while (true);
+    }
+
 }
 
