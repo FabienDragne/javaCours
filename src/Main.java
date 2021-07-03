@@ -304,6 +304,7 @@ public class Main {
         System.out.println("\n");
 
         int [] test = {1, 2, 3, 4, 5, 10, 6, 7, 8, 9, 10};
+
         System.out.println("Exemple de ma fonction remove3 : ");
         System.out.println("(retrait de l'index 4 du tableau test)");
         System.out.println(Arrays.toString(Exo4.remove3(test, 5)));

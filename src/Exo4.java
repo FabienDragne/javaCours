@@ -231,7 +231,7 @@ public class Exo4 {                 // classe ArrayUtils dans l'énoncé
 
 
     // J'ai une préférence pour celle là, bien qu'elle soit affreusement peu performante
-    // (mais au moins j'ai réutilisé des fonctions, hein?)
+    // Mais au moins j'ai réutilisé des fonctions, hein? ;)
 
     public static int [] remove3(int [] pTab, int pIndiceASupprimer) {
 
