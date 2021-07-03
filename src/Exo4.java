@@ -205,27 +205,45 @@ public class Exo4 {                 // classe ArrayUtils dans l'énoncé
         return result;
     }
 
-
     public static int [] remove2(int [] pTab, int pIndiceASupprimer) {
 
+        // Supprime un élément du tableau
+        // (non fonctionnelle pour l'instant)
+
         int [] result = new int [pTab.length - 1];
-        int buffer = pTab.length;
+        int buffer = result.length;
 
-        if (buffer == pIndiceASupprimer) {
-
-        }
-        /*
-        for (int i = 0; i < buffer; i++) {
+        for (int i = 0; i < buffer -1; i++) {
             if(i != pIndiceASupprimer) {
                 result[i] = pTab[i];
             }
                 else {
-                    result[i] = pTab[i];
-                    buffer--;
+                    result[i] = pTab[i - 1];
+                     buffer++;
+                     i--;
+                    // buffer += 2;
+                    pIndiceASupprimer-=2;
                 }
-        }
-        */
+            }
 
+        return result;
+    }
+
+
+    // J'ai une préférence pour celle là, bien qu'elle soit affreusement peu performante
+    // (mais au moins j'ai réutilisé des fonctions, hein?)
+
+    public static int [] remove3(int [] pTab, int pIndiceASupprimer) {
+
+        int [] result = new int [0];
+        for (int i = 0; i < pTab.length - 1; i++) {
+            if (i >= pIndiceASupprimer) {
+                permute(pTab, pIndiceASupprimer, pIndiceASupprimer + 1);
+                pIndiceASupprimer++;
+            }
+            result = add(result, pTab[i]);
+            if(i == result.length) i = pTab.length;
+        }
         return result;
     }
 }

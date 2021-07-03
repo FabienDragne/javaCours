@@ -291,9 +291,22 @@ public class Main {
 
         System.out.println("\n           ---------------------           \n");
 
-        System.out.println("Exemple de ma fonction remove : ");
+        System.out.println("Exemple de ma fonction remove1 : ");
         System.out.println("(retrait de l'index 4 du tableau tabTest2)");
         System.out.println(Arrays.toString(Exo4.remove1(tabTest2, 4)));
+
+        System.out.println("\n");
+
+        System.out.println("Exemple de ma fonction remove2 : ");
+        System.out.println("(retrait de l'index 4 du tableau tabTest2)");
+        System.out.println(Arrays.toString(Exo4.remove2(tabTest2, 4)));
+
+        System.out.println("\n");
+
+        int [] test = {1, 2, 3, 4, 5, 10, 6, 7, 8, 9, 10};
+        System.out.println("Exemple de ma fonction remove3 : ");
+        System.out.println("(retrait de l'index 4 du tableau test)");
+        System.out.println(Arrays.toString(Exo4.remove3(test, 5)));
      }
     
 }
