@@ -144,10 +144,10 @@ public class Exo3 {
         // Plus grand caractère de la chaîne
         // (chaîne d'entrée en minuscule uniquement)
 
-        char result = 'a';
+        char result = x.charAt(0);
         char compare;
 
-        for(int i = 0; i < x.length(); i++) {
+        for(int i = 1; i < x.length(); i++) {
             compare = x.charAt(i);
             if(result < compare) {
                 result = compare;
@@ -183,7 +183,12 @@ public class Exo3 {
         // Question bonus : 1
         // Retirer les espaces au début et à la fin (trim)
         // "  totoen vacance " -> "totoen vacance"
-        
+
+        return reverse(deleteBlankAtBegining(reverse(deleteBlankAtBegining(x))));
+
+        // Ancienne version
+
+        /*
         String buffer = deleteBlankAtBegining(x);
         int endBlankNumber = 0;
         String result = "";
@@ -205,7 +210,8 @@ public class Exo3 {
             result += buffer.charAt(i);
         }
 
-        return result;
+         */
+
     }
 
     public static boolean estUnPalindrome(String x) {
@@ -213,6 +219,19 @@ public class Exo3 {
         // Question bonus : 2
         // Indique si une chaîne est un palindrome
 
+        String reversed = reverse(x);
+        String buffer1 = "";
+        String buffer2 = "";
+
+        for(int i = 0; i < (x.length()/2); i++) {
+            buffer1 += x.charAt(i);
+            buffer2 += reversed.charAt(i);
+        }
+
+        return buffer1.equalsIgnoreCase(buffer2);
+
+        // Ancien code
+        /*
         boolean result = false;
         String buffer = "";
         String reverseBuffer = "";
@@ -239,6 +258,30 @@ public class Exo3 {
         }
 
         return result;
+
+         */
+    }
+
+    public static boolean isPasswordValid(String x) {
+
+        // Question bonus : 3
+        // Vérifie si une chaine est un mot de passe valide :
+        // 8 chars min, 1 maj | min | chiffre
+
+        Boolean oneLowerCaseCheck = false;
+        Boolean oneNumberCheck = false;
+
+        for(int i = 0; i < x.length(); i++) {
+            if (Character.isLowerCase(x.charAt(i))) {
+                oneLowerCaseCheck = true;
+            }
+            else if (Character.isDigit(x.charAt(i))) {
+                oneNumberCheck = true;
+            }
+        }
+
+        return (x.length() >= 8) && (nombreDeMajuscule(x) > 0) && oneLowerCaseCheck && oneNumberCheck;
+
     }
 
 }
